@@ -22,7 +22,7 @@ export default function RootLayout({
         <Header />
         <div className="flex">
         <Sidebar />
-        <div className="w-full">
+        <div className="w-full mx-3">
         {children}
           </div> 
         </div>
