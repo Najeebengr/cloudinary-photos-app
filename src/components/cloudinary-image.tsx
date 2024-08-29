@@ -2,9 +2,10 @@
 import HeartIcon from '@/components/icons/heart'
 import { CldImage, CldImageProps } from 'next-cloudinary'
 import React, { useState, useTransition } from 'react'
-import setAsFavoriteAction from './actions'
+import setAsFavoriteAction from '../app/gallery/actions'
 import FullHeartIcon from '@/components/icons/fullHeart'
-import { searchResult } from './page'
+import { searchResult } from '../app/gallery/page'
+import ImageMenu from './image-menu'
 
 function CloudinaryImage(
  props: {
@@ -24,7 +25,7 @@ return (
       {
         isFavorited ? 
         (
-        <FullHeartIcon className='absolute top-2 right-2 hover:cursor-pointer text-red-600 hover:text-white'
+        <FullHeartIcon className='absolute top-2 left-2 hover:cursor-pointer text-red-600 hover:text-white'
       onClick={()=>{
         onUnheart?.(imgdata);
         setIsFavorites(false);
@@ -36,7 +37,7 @@ return (
     )
         :
         (
-        <HeartIcon className='absolute top-2 right-2 hover:cursor-pointer hover:text-red-600'
+        <HeartIcon className='absolute top-2 left-2 hover:cursor-pointer hover:text-red-600'
       onClick={()=>{
         setIsFavorites(true);
         startTransition(()=>{
@@ -44,8 +45,8 @@ return (
         })
       }}
       />
-    )
-      }
+    )}
+    <ImageMenu image={imgdata} />
       
     </div>
   )

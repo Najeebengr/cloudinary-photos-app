@@ -1,10 +1,10 @@
 'use client'
 import React from 'react'
-import CloudinaryImage from '../../components/cloudinary-image';
+import CloudinaryImage from '@/components/cloudinary-image';
 import ImageGrid from '@/components/image-grid';
 import { searchResult } from './page';
 
- function GridGallery({images}: {images: searchResult[]}) {
+ function AlbumGrid({images}: {images: searchResult[]}) {
 
     return (
            <ImageGrid
@@ -25,4 +25,4 @@ priority
     );
 }
 
-export default GridGallery
+export default AlbumGrid

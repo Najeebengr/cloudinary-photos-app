@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import CloudinaryImage from '../gallery/cloudinary-image';
+import CloudinaryImage from '../../components/cloudinary-image';
 import { searchResult } from '../gallery/page';
 import ImageGrid from '@/components/image-grid';
 
@@ -23,6 +23,14 @@ key={imgData.public_id}
 alt = "An image of something"
 width = {400}
 height ={300}
+onUnheart={(unheartResource)=>{
+    setResources((currentResources)=>
+    currentResources.filter(
+        (resource)=>
+            resource.public_id !== unheartResource.public_id
+    )
+    )
+}}
 priority
         />
             )

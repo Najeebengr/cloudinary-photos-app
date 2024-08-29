@@ -1,24 +1,21 @@
 
 import React from 'react'
-import UploadButton from './upload-button';
 import cloudinary from 'cloudinary'
-import GridGallery from './grid-gallery';
-import SearchForm from './search-form';
+import AlbumGrid from './album-grid';
+import ForceRefresh from '@/components/force-refresh';
 
 export type searchResult = {
     public_id : string
     tags : string[]
 }
 
-async function GalleryPage({
-    searchParams: {search},
-}:{
-    searchParams: {
-        search: string
+async function GalleryPage({params: {albumName}}: {
+    params: {
+        albumName: string
     }
 }) {
     const results = (await cloudinary.v2.search
-  .expression(`resource_type:image ${search ? ` AND tags=${search}`: ""} `)
+  .expression(`resource_type:image AND folder = ${albumName}`)
   .sort_by('created_at','desc')
   .max_results(30)
   .with_field('tags')
@@ -27,18 +24,16 @@ async function GalleryPage({
 
     return (
         <section>
+            
+        <ForceRefresh />
             <div className='flex flex-col gap-8'>
 
             <div className='flex justify-between mt-5'>
                 <h1 className='text-2xl font-bold'>
-                    Gallery
+                    Album {albumName}
                 </h1>
-
-            <UploadButton />
             </div>
-            
-            <SearchForm initialSearch={search} />
-            <GridGallery
+            <AlbumGrid
             images={results.resources}
             />
            
