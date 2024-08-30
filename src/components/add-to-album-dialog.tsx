@@ -15,7 +15,6 @@ import { FolderPlus } from "lucide-react"
 import { forwardRef, useState } from "react"
 import { addImageToAlbum } from "./actions"
 
-// export default function AddToAlbumDialog({image, onClose}: {image: searchResult, onClose: ()=> void}) {
   const AddToAlbumDialog = forwardRef(({ image , onClose }: {image: searchResult, onClose: ()=> void}, ref) => {
     const [albumName, setAlbumName] = useState("");
     const [open, setOpen] = useState(false);
@@ -67,4 +66,5 @@ import { addImageToAlbum } from "./actions"
     </Dialog>
   )
   })
+  AddToAlbumDialog.displayName = 'AddToAlbumDialog';
   export default AddToAlbumDialog;

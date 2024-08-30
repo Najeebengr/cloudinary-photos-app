@@ -5,7 +5,7 @@ import { Ghost } from 'lucide-react'
 import { CldImage } from 'next-cloudinary'
 import React, { useState } from 'react'
 
-function editPage({
+function EditPage({
     searchParams: {publicId},
 }:{
     searchParams: {
@@ -59,4 +59,4 @@ function editPage({
   )
 }
 
-export default editPage
+export default EditPage
