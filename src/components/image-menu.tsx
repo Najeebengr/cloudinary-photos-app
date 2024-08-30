@@ -1,4 +1,4 @@
-import { FolderPlus, Pencil } from "lucide-react"
+import { FolderPlus, Pencil, Trash } from "lucide-react"
   
   import { Button } from "@/components/ui/button"
   import {
@@ -38,6 +38,11 @@ import Link from "next/link"
               <Link href={`/edit/?publicId=${encodeURIComponent(image.public_id)}`} > 
               <Pencil className="w-6" />
               Edit </Link> 
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild  className="w-full justify-start gap-4 cursor-pointer">
+              <Link href={`/delete/?publicId=${encodeURIComponent(image.public_id)}`} > 
+              <Trash className="w-6" />
+              Delete </Link> 
             </DropdownMenuItem>
           </DropdownMenuGroup>
         </DropdownMenuContent>
