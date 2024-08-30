@@ -5,6 +5,7 @@ import ImageGrid from '@/components/image-grid';
 import { searchResult } from './page';
 
  function GridGallery({images}: {images: searchResult[]}) {
+    console.log({images});
 
     return (
            <ImageGrid
