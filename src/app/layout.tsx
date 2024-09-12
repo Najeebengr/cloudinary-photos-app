@@ -8,7 +8,7 @@ import { Toaster } from "@/components/ui/toaster";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "JavaScript Geek Photos",
+  title: "Najeeb Photos Album",
   description: "Cloudinary Photo Album Application in Next JS",
 };
 

@@ -9,7 +9,7 @@ function Header() {
       <div className="border-b">
           <div className="flex h-16 items-center px-4 container mx-auto capitalize">
             <Link href={'/'} className='flex gap-3 items-center font-bold'>
-            <Image src={'/icon.png'} height={40} width={40} alt='Photo Album'/> JavaScript Geek Photos
+            <Image src={'/icon.png'} height={40} width={40} alt='Photo Album'/> Najeeb Photos Album
             </Link>
             <div className="ml-auto flex items-center space-x-4">
             <Avatar>
